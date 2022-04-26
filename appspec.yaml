@@ -1,0 +1,9 @@
+version: 0.0
+Resources:
+  - TargetService: "arn:aws:iam::013281767577:role/ecsTaskExecutionRole"
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "<<TASKDEF_ARN>>" 
+        LoadBalancerInfo:
+          ContainerName: "cntr-img-tripmgmt"
+          ContainerPort: 8080
